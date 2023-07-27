@@ -1,14 +1,14 @@
 'use client'
-import { useSession } from 'next-auth/react'
+
+import QuickSearch from './components/QuickSearch';
 import TripSearch from './components/TripSearch';
 
-
 export default function Home() {
-  const { data } = useSession()
 
   return (
-    <div>      
-      <TripSearch/>
+    <div>
+      <TripSearch />
+      <QuickSearch/>
     </div>
   )
 
