@@ -1,14 +1,14 @@
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { authOption } from "../auth/[...nextauth]/route";
+import { authOptions } from "../auth/[...nextauth]/route";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2022-11-15",
 });
 
 export async function POST(request: Request) {
-  const userSession = await getServerSession(authOption);
+  const userSession = await getServerSession(authOptions);
 
   const req = await request.json();
 
